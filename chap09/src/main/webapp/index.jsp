@@ -4,15 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>edition</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<%
-		int num1 = 20;
-		int num2 = 10;
-		int add = num1+num2;
-	%>
-	
-	<%=num1%> + <%=num2 %> = <%=add %>
+<a href="login.do">로그인 페이지로 이동</a>
 </body>
 </html>
