@@ -1,4 +1,4 @@
-document.write("자바스크립트 스타트");
+
 
 function loginCheck() {
 	if (document.frm.userid.value.length ==0){
