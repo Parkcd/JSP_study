@@ -157,7 +157,8 @@
       
       
       
-      <Context docBase="chap11" path="/chap11" reloadable="true" source="org.eclipse.jst.jee.server:chap11">
+      
+      <Context docBase="chap10" path="/chap10" reloadable="true" source="org.eclipse.jst.jee.server:chap10">
             <Resource
      name="jdbc/oracle"
      auth = "Container"

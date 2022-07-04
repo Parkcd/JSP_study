@@ -2,7 +2,6 @@
 
 #wrap{
 	width: 971px;/* 1024*768로 해상도를 맞추어서 설계 */
-	/* 가운데 정렬을 위한 바깥족 여백 설정 */
 	margin: 0;
 	margin-left: auto;
 	margin-right: auto;
@@ -13,7 +12,7 @@ h1{
 
 table{
 	width: 100%;
-	border-collapse: collapse;
+	border-collapse: collapse; /* table tag를 쓸때는 board-collapse 가 자동적으로 따로오고 초기화 역할을 해줌 그리고 따로 분리된 td를 한줄로 보이게 해줌
 	font-size: 12px;		/* 글꼴 크기 */
 	line-height: 24px		/* 줄 간격 */
 }

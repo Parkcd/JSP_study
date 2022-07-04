@@ -30,10 +30,10 @@ public class ProductWriteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		ServletContext context = getServletContext();
-		String path = context.getRealPath("upload");
-		String encType = "UTF-8";
-		int sizeLimit = 20 * 1024 * 1024;
+		ServletContext context = getServletContext(); //업로드 할 파일 경로를 서버상의 실제 경로로 찾아옴.
+		String path = context.getRealPath("upload");  //업로드 할 파일 경로를 서버상의 실제 경로로 찾아옴.
+		String encType = "UTF-8"; // 업로드 할 파일 이름이 한글일 경우 깨지지 않도록 하기위한 인코딩 방식
+		int sizeLimit = 20 * 1024 * 1024; // 업로드 파일 크기 20mb 로 지정
 		
 		MultipartRequest multi = new MultipartRequest(request, path,sizeLimit,encType, new DefaultFileRenamePolicy());
 		
