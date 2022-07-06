@@ -40,7 +40,7 @@ public class ProductWriteServlet extends HttpServlet {
 		String name = multi.getParameter("name");
 		int price = Integer.parseInt(multi.getParameter("price"));
 		String description = multi.getParameter("description");
-		String pictureUrl = multi.getFilesystemName("pictureUrl");
+		String pictureUrl = multi.getFilesystemName("pictureUrl"); 
 		ProductVO pVo = new ProductVO();
 		pVo.setName(name);
 		pVo.setPrice(price);
