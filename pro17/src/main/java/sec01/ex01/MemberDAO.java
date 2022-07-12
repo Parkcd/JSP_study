@@ -30,11 +30,11 @@ public class MemberDAO {
 public List listMembers() {
    List membersList = new ArrayList();
    try {
-      conn = dataFactory.getConnection();
-      String query = "select * from t_member order by joinDate desc";
+      conn = dataFactory.getConnection(); //sql 여동
+      String query = "select * from t_member order by joinDate desc"; 
       System.out.println(query);
-      pstmt = conn.prepareStatement(query);
-      ResultSet rs = pstmt.executeQuery();
+      pstmt = conn.prepareStatement(query); // sql 실행
+      ResultSet rs = pstmt.executeQuery(); // select 라서 executeQuery 써서 조회만 하는거고 insert delete 같은건 update 써야함
       while (rs.next()) {
          String id = rs.getString("id");
          String pwd = rs.getString("pwd");
@@ -63,12 +63,12 @@ public List listMembers() {
          String query = "INSERT INTO t_member(id, pwd, name, email)" + "VALUES(?, ?, ?, ?)";
          System.out.println(query);
          
-         pstmt = conn.prepareStatement(query);
+         pstmt = conn.prepareStatement(query); 
          pstmt.setString(1, id);
          pstmt.setString(2, pwd);
          pstmt.setString(3, name);
          pstmt.setString(4, email);
-         pstmt.executeUpdate();
+         pstmt.executeUpdate(); // 여기는 insert 라서 테이블이 업데이트 되어가지고 update를 써야함
          pstmt.close();
          conn.close();
       } catch (Exception e) {

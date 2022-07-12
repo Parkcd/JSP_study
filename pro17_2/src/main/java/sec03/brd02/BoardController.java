@@ -1,11 +1,15 @@
 package sec03.brd02;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
 import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
@@ -24,7 +29,7 @@ public class BoardController extends HttpServlet {
 	BoardService boardService;
 	ArticleVO articleVO;
 	
-	public void init() throws ServletException
+	public void init(ServletConfig config) throws ServletException
 	{
 		boardService = new BoardService();
 		articleVO = new ArticleVO();
@@ -81,6 +86,7 @@ public class BoardController extends HttpServlet {
 	}
 	
 	private Map<String, String> upload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		Map<String, String> articleMap = new HashMap<String, String>();
 		String encoding = "utf-8";
 		File currentDirPath = new File(ARTICLE_IMAGE_REPO);
 		DiskFileItemFactory factory = new DiskFileItemFactory();

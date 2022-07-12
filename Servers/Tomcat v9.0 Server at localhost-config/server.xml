@@ -153,21 +153,18 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
       
+      &gt;
+      &gt;
       
       
-      <Context docBase="pro17_2" path="/pro17_2" reloadable="true" source="org.eclipse.jst.jee.server:pro17_2">
-            <Resource
-     name="jdbc/oracle"
-     auth = "Container"
-     type="javax.sql.DataSource"
-     driverClassName="oracle.jdbc.OracleDriver"
-     url="jdbc:oracle:thin:@localhost:1521:XE"
-     username="bg"
-     password="bg"
-     maxActive="50"
-     maxWait="-1" />
+      
+      <Context docBase="pro17" path="/pro17" reloadable="true" source="org.eclipse.jst.jee.server:pro17">
+            <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxActive="50" maxWait="-1" name="jdbc/oracle" password="bg" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="bg"/>
       </Context>
-      </Host>
+      <Context docBase="pro17_2" path="/pro17_2" reloadable="true" source="org.eclipse.jst.jee.server:pro17_2">
+            <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxActive="50" maxWait="-1" name="jdbc/oracle" password="bg" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="bg"/>
+      </Context>
+      <Context docBase="EventInfo" path="/EventInfo" reloadable="true" source="org.eclipse.jst.jee.server:EventInfo"/></Host>
     </Engine>
   </Service>
 </Server>
