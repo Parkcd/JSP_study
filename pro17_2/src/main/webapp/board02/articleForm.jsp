@@ -5,7 +5,7 @@
 <% 
 	request.setCharacterEncoding("UTF-8");
 %>
-
+<c:set var="contextPath"  value="${pageContext.request.contextPath}"  /> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +35,7 @@
   <form name = "articleForm" method = "post"
   							 action = "${contextPath}/board/addArticle.do"
   							 enctype = "multipart/form-data">
-  <table border = "0" align = "center">
+  <table border=0 align="center">
     <tr>
       <td align = "right">글제목: </td>
       <td colspan ="2"><input type="text" size="67" maxlength="500" name ="title"/></td>

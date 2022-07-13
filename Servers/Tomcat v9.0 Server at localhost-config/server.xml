@@ -158,12 +158,9 @@
       
       
       
-      <Context docBase="pro17" path="/pro17" reloadable="true" source="org.eclipse.jst.jee.server:pro17">
-            <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxActive="50" maxWait="-1" name="jdbc/oracle" password="bg" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="bg"/>
-      </Context>
-      <Context docBase="pro17_2" path="/pro17_2" reloadable="true" source="org.eclipse.jst.jee.server:pro17_2">
-            <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxActive="50" maxWait="-1" name="jdbc/oracle" password="bg" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="bg"/>
-      </Context>
+      
+      
+      
       <Context docBase="EventInfo" path="/EventInfo" reloadable="true" source="org.eclipse.jst.jee.server:EventInfo"/></Host>
     </Engine>
   </Service>
